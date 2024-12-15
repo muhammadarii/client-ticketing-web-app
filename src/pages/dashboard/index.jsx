@@ -6,9 +6,6 @@ import Table from "react-bootstrap/Table";
 import SBreadCrumb from "../../components/Breadcrumb";
 
 const DashboardPage = () => {
-  const token = localStorage.getItem("token");
-  if (!token) return <Navigate to="/signin" replace={true} />;
-
   return (
     <div className="font-poppins bg-white h-screen">
       <div className="text-white">
