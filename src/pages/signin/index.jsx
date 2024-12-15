@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import DNavbar from "../../components/NavbarDashboard";
 import SAlert from "../../components/Alert";
 import SForm from "./form";
-import { Navigate, useNavigate } from "react-router-dom";
-import axios from "axios";
-import { config } from "../../config";
+import { useNavigate } from "react-router-dom";
 import Apple from "../../styles/img/apple.png";
 import Google from "../../styles/img/google.png";
 import Adobe from "../../styles/img/Adobe.png";
 import Slack from "../../styles/img/slack.png";
 import Spotify from "../../styles/img/spotify.png";
+import { postData } from "../../utils/fetch";
+import { useDispatch } from "react-redux";
+import { userLogin } from "../../redux/auth/actions";
 
 const PageSignin = () => {
-  const token = localStorage.getItem("token");
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
@@ -34,11 +35,9 @@ const PageSignin = () => {
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.post(
-        `${config.api_host_dev}/cms/auth/signin`,
-        form
-      );
-      localStorage.setItem("token", res.data.data.token);
+      const res = await postData(`/cms/auth/signin`, form);
+
+      dispatch(userLogin(res.data.data.token, res.data.data.role));
       setIsLoading(false);
       navigate("/");
     } catch (err) {
@@ -49,7 +48,6 @@ const PageSignin = () => {
       });
     }
   };
-  if (token) return <Navigate to="/" />;
   return (
     <>
       <DNavbar />
