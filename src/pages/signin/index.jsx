@@ -50,7 +50,7 @@ const PageSignin = () => {
   };
   return (
     <>
-      <DNavbar />
+      {/* <DNavbar /> */}
       <div className="container mx-auto font-poppins">
         <div className="flex flex-col justify-center items-center md:h-screen">
           <h1 className="font-medium text-[25px] md:text-[45px] text-white">
