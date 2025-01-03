@@ -28,7 +28,7 @@ function SNavbar() {
 
   const handleLogout = () => {
     localStorage.clear();
-    window.location.href = "/login";
+    window.location.href = "/signin";
   };
 
   return (
@@ -67,7 +67,7 @@ function SNavbar() {
           {/* <NavLink
             role={role}
             roles={organizers.lihat}
-            action={() => navigate('/organizers')}
+            action={() => navigate("/organizers")}
           >
             Oranizer
           </NavLink> */}
@@ -88,9 +88,9 @@ function SNavbar() {
           <NavLink
             role={role}
             roles={accessOrders.lihat}
-            action={() => navigate("/orders")}
+            action={() => navigate("/transactions")}
           >
-            Orders
+            Transactions
           </NavLink>
         </Nav>
         <Nav className="justify-content-end">

@@ -49,7 +49,6 @@ const CategoryCreate = () => {
   return (
     <>
       <div className="bg-white w-full h-screen">
-        <DNavbar />
         <div className="px-[60px] py-[20px]">
           <SBreadCrumb
             textSecond={"Categories"}
