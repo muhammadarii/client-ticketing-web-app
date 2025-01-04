@@ -6,10 +6,18 @@ export default function SBreadCrumb({ textSecond, textThird, urlSecond }) {
   const navigate = useNavigate();
   return (
     <Breadcrumb className="my-2 text-[14px]">
-      <Breadcrumb.Item onClick={() => navigate("/")}>Home</Breadcrumb.Item>
+      <Breadcrumb.Item
+        className="text-blue-500 underline hover:text-blue-900"
+        onClick={() => navigate("/")}
+      >
+        Home
+      </Breadcrumb.Item>
       {!textThird && <Breadcrumb.Item active>{textSecond}</Breadcrumb.Item>}
       {textThird && (
-        <Breadcrumb.Item onClick={() => navigate(urlSecond)}>
+        <Breadcrumb.Item
+          className="text-blue-500 underline hover:text-blue-900"
+          onClick={() => navigate(urlSecond)}
+        >
           {textSecond}
         </Breadcrumb.Item>
       )}

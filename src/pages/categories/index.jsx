@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SBreadCrumb from "../../components/Breadcrumb";
 import Button from "../../components/Button";
-// import Table from "../../components/TableWithAction";
+import Table from "../../components/TableWithAction";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCategories } from "../../redux/categories/actions";
 import SAlert from "../../components/Alert";
@@ -15,7 +15,7 @@ function Categories() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const notif = useSelector((state) => state.notif);
+  // const notif = useSelector((state) => state.notif);
   const categories = useSelector((state) => state.categories);
   const [access, setAccess] = useState({
     tambah: false,
@@ -75,7 +75,7 @@ function Categories() {
 
       {access.tambah && (
         <Button
-          className={"mb-3"}
+          className={"mb-3 bg-green px-2 py-1 rounded-md"}
           action={() => navigate("/categories/create")}
         >
           Tambah
@@ -86,7 +86,7 @@ function Categories() {
         <SAlert type={notif.typeNotif} message={notif.message} />
       )} */}
 
-      {/* <Table
+      <Table
         status={categories.status}
         thead={["Nama", "Aksi"]}
         data={categories.data}
@@ -94,7 +94,7 @@ function Categories() {
         editUrl={access.edit ? `/categories/edit` : null}
         deleteAction={access.hapus ? (id) => handleDelete(id) : null}
         withoutPagination
-      /> */}
+      />
     </div>
   );
 }

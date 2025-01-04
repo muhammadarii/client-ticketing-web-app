@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import DNavbar from "../../components/NavbarDashboard";
 import SBreadCrumb from "../../components/Breadcrumb";
 import SAlert from "../../components/Alert";
 import Form from "./form";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { config } from "../../config";
+import { config } from "../../configs";
 
 const CategoryCreate = () => {
   const navigate = useNavigate();
