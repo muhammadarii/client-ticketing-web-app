@@ -75,7 +75,7 @@ function Categories() {
 
       {access.tambah && (
         <Button
-          className={"mb-3 bg-green px-2 py-1 rounded-md"}
+          className={"mb-3 bg-green px-2 py-1"}
           action={() => navigate("/categories/create")}
         >
           Tambah
