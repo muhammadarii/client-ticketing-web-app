@@ -15,14 +15,12 @@ const form = ({ handleSubmit, form, handleChange, isLoading, edit }) => {
         onChange={handleChange}
       />
       <SButton
-        className={
-          "w-[412px] h-[50px] rounded-[45px] font-medium bg-green mt-5"
-        }
         variant="primary"
-        type="submit"
         action={handleSubmit}
+        loading={isLoading}
+        className={"mt-2"}
       >
-        {edit ? "Update" : "Submit"}
+        {edit ? "Ubah" : "Simpan"}
       </SButton>
     </Form>
   );

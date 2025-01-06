@@ -15,7 +15,7 @@ function Categories() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // const notif = useSelector((state) => state.notif);
+  const notif = useSelector((state) => state.notif);
   const categories = useSelector((state) => state.categories);
   const [access, setAccess] = useState({
     tambah: false,
@@ -70,31 +70,32 @@ function Categories() {
   };
 
   return (
-    <div className="font-poppins bg-white h-screen px-[60px] py-[20px]">
-      <SBreadCrumb textSecond={"Categories"} />
+    <div className="font-poppins bg-white h-screen">
+      <div className="mx-auto container px-[60px] py-[20px]">
+        <SBreadCrumb textSecond={"Categories"} />
+        {access.tambah && (
+          <Button
+            className={"mb-3 bg-green px-2 py-1 rounded-md"}
+            action={() => navigate("/categories/create")}
+          >
+            Tambah
+          </Button>
+        )}
 
-      {access.tambah && (
-        <Button
-          className={"mb-3 bg-green px-2 py-1"}
-          action={() => navigate("/categories/create")}
-        >
-          Tambah
-        </Button>
-      )}
+        {notif.status && (
+          <SAlert type={notif.typeNotif} message={notif.message} />
+        )}
 
-      {/* {notif.status && (
-        <SAlert type={notif.typeNotif} message={notif.message} />
-      )} */}
-
-      <Table
-        status={categories.status}
-        thead={["Nama", "Aksi"]}
-        data={categories.data}
-        tbody={["name"]}
-        editUrl={access.edit ? `/categories/edit` : null}
-        deleteAction={access.hapus ? (id) => handleDelete(id) : null}
-        withoutPagination
-      />
+        <Table
+          status={categories.status}
+          thead={["Nama", "Aksi"]}
+          data={categories.data}
+          tbody={["name"]}
+          editUrl={access.edit ? `/categories/edit` : null}
+          deleteAction={access.hapus ? (id) => handleDelete(id) : null}
+          withoutPagination
+        />
+      </div>
     </div>
   );
 }
