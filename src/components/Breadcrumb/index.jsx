@@ -7,7 +7,7 @@ export default function SBreadCrumb({ textSecond, textThird, urlSecond }) {
   return (
     <Breadcrumb className="my-2 text-[14px]">
       <Breadcrumb.Item
-        className="text-blue-500 underline hover:text-blue-900"
+        className="text-blue-500 hover:text-blue-900"
         onClick={() => navigate("/")}
       >
         Home
@@ -15,7 +15,7 @@ export default function SBreadCrumb({ textSecond, textThird, urlSecond }) {
       {!textThird && <Breadcrumb.Item active>{textSecond}</Breadcrumb.Item>}
       {textThird && (
         <Breadcrumb.Item
-          className="text-blue-500 underline hover:text-blue-900"
+          className="text-blue-500 hover:text-blue-900"
           onClick={() => navigate(urlSecond)}
         >
           {textSecond}
