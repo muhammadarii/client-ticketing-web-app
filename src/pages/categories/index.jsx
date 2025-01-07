@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchCategories } from "../../redux/categories/actions";
 import SAlert from "../../components/Alert";
 // import Swal from "sweetalert2";
-import { deleteData } from "../../utils/fetch";
+// import { deleteData } from "../../utils/fetch";
 // import { setNotif } from "../../redux/notif/actions";
 import { accessCategories } from "../../const/access";
 
