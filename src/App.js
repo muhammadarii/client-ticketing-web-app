@@ -4,6 +4,7 @@ function App() {
   return (
     <>
       <div>HelloWorld</div>
+      <div>Halaman Dashboard</div>
     </>
   );
 }
