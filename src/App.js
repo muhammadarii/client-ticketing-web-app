@@ -3,8 +3,9 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div>HelloWorld</div>
+      <div className="header bg-primary">HelloWorld</div>
       <div>Halaman Dashboard</div>
+      <div>Footer</div>
     </>
   );
 }
