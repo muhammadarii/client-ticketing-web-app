@@ -6,7 +6,7 @@ export const SButton = ({
   variant,
   size,
   loading,
-  disabeld,
+  disabled,
   className,
 }) => {
   return (
@@ -14,7 +14,7 @@ export const SButton = ({
       className={className}
       onClick={action}
       variant={variant}
-      disabeld={disabeld}
+      disabled={disabled}
       size={size}
     >
       {loading ? "Loading..." : children}
